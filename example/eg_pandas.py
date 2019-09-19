@@ -1,25 +1,37 @@
 import numpy as np
 import pandas as pd
-from pandas import DataFrame as df
 
-np.str_
-print('--------------Series--------------')
-s = pd.Series([1,3,5,np.nan,6,8,'ab'])
-s = s * 2
-print(s)
-print(s.index)
-print(s.values)
-print(s.values[0],',',s.values[6])
-print(s.isnull())
-print('--------------DataFrame---二维的Series-----------')
-data = {"name":['google','baidu','yahoo'],"marks":[100,200,300],"price":[1,2,3]}
-f = df(data)
-print(f)
-print(f.index)
-print(f.values)
-print(f.values[0],',',f.values[2])
-print(f.values[0][0],',',f.values[2][2])
+import urllib.request
+import re
 
-print('--------------DataFrame---二维的Series-----------')
-f2 = df(data,columns=['name','marks','price'],index=['a','b','c'])
-print(f2)
+a = np.random.standard_normal((9, 4))
+print(a.round(6))
+
+#py抓取页面图片并保存到本地
+
+#获取页面信息
+def getHtml(url):
+    html = urllib.request.urlopen(url).read()
+    print(html)
+    return html
+
+#通过正则获取图片
+def getImg(html):
+    reg = 'src="(.+?\.jpg)" pic_ext'
+    imgre = re.compile(reg)
+    imglist = re.findall(imgre,html)
+   # print(imglist)
+    return imglist
+
+html = getHtml("http://tieba.baidu.com/p/2460150866")
+
+list=getImg(html.decode())
+
+#循环把图片存到本地
+x = 0
+for imgurl in list:
+    print(x)
+    urllib.request.urlretrieve(imgurl,'d:\\%s.jpg'% x)
+    x+=1
+
+print("done")

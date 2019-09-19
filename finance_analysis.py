@@ -20,8 +20,8 @@ def main_7day():
     行情
     :return:
     """
-    start = '2019-06-10'
-    end = '2019-06-21'
+    start = '2019-06-24'
+    end = '2019-07-12'
 
     # from datetime import datetime
     # start_date = datetime(2004, 4, 5).date()

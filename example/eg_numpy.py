@@ -10,6 +10,7 @@ print("x:\n{}".format(x))
 
 eye = np.eye(4)
 print("numpy array:\n{}".format(eye))
+print(eye)
 
 sparse_matrix = sparse.csr_matrix(eye)
 print("\nScipy sparse csr matrix:\n{}".format(sparse_matrix))

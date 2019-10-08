@@ -4,6 +4,7 @@ import pandas as pd
 import urllib.request
 import re
 
+
 a = np.random.standard_normal((9, 4))
 print(a.round(6))
 

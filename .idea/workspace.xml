@@ -42,12 +42,12 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/example/eg_pandas.py">
+        <entry file="file://$PROJECT_DIR$/example/eg_read_xsl_todb.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="200">
-              <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+            <state relative-caret-position="400">
+              <caret line="16" column="32" lean-forward="true" selection-start-line="16" selection-start-column="32" selection-end-line="16" selection-end-column="32" />
               <folding>
-                <element signature="e#0#18#0" expanded="true" />
+                <element signature="e#0#19#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -100,10 +100,12 @@
         <option value="$PROJECT_DIR$/finance/finc.py" />
         <option value="$PROJECT_DIR$/finance/bsm_mcs_euro.py" />
         <option value="$PROJECT_DIR$/example/topyc.py" />
-        <option value="$PROJECT_DIR$/example/eg_oracle_to_xls.py" />
         <option value="$PROJECT_DIR$/finance_analysis.py" />
         <option value="$PROJECT_DIR$/example/eg_numpy.py" />
         <option value="$PROJECT_DIR$/example/eg_pandas.py" />
+        <option value="$PROJECT_DIR$/example/eg_oracle_to_xls.py" />
+        <option value="$PROJECT_DIR$/example/config.ini" />
+        <option value="$PROJECT_DIR$/example/eg_read_xsl_todb.py" />
       </list>
     </option>
   </component>
@@ -114,7 +116,7 @@
     <other-services-enabled>true</other-services-enabled>
     <auto-save>true</auto-save>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="29" />
     <option name="width" value="1346" />
     <option name="height" value="728" />
@@ -127,6 +129,22 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="finance" type="b2602c69:ProjectViewProjectNode" />
+              <item name="finance" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="finance" type="b2602c69:ProjectViewProjectNode" />
+              <item name="finance" type="462c0819:PsiDirectoryNode" />
+              <item name="example" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
       <pane id="Scope">
         <subPane subId="Project Files">
           <expand>
@@ -143,7 +161,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="ProjectPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -152,9 +169,9 @@
     <property name="ToolWindowStructure.ShowToolbar" value="false" />
     <property name="ToolWindowTODO.ShowToolbar" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../spider" />
-    <property name="nodejs_interpreter_path" value="$PROJECT_DIR$/../study/node.js/node-v8.4.0-win-x64/node" />
-    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_interpreter_path" value="node" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="PyConsoleOptionsProvider">
     <option name="myPythonConsoleState">
@@ -377,11 +394,12 @@
       <workItem from="1569652321414" duration="1948000" />
       <workItem from="1569679598692" duration="974000" />
       <workItem from="1569680603446" duration="363000" />
+      <workItem from="1590566868273" duration="5914000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="4145000" />
+    <option name="totallyTimeSpent" value="10059000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -394,20 +412,21 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Structure" order="0" show_stripe_button="false" sideWeight="0.49061033" weight="0.24886535" />
       <window_info content_ui="combo" id="TODO" order="1" show_stripe_button="false" sideWeight="0.51954395" side_tool="true" weight="0.14750378" />
       <window_info id="Favorites" order="2" show_stripe_button="false" side_tool="true" />
       <window_info id="Terminal" order="3" show_stripe_button="false" sideWeight="0.51954395" side_tool="true" weight="0.14750378" />
-      <window_info content_ui="combo" x="595" y="46" width="175" height="636" id="Project" order="4" sideWeight="0.80465114" visible="true" weight="0.12811127" />
+      <window_info active="true" content_ui="combo" x="595" y="46" width="175" height="636" id="Project" order="4" sideWeight="0.80465114" visible="true" weight="0.21888727" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32840723" />
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4838946" weight="0.34126985" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.46962234" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info active="true" anchor="bottom" id="Event Log" order="6" sideWeight="0.5161054" side_tool="true" visible="true" weight="0.34018987" />
-      <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" weight="0.32899022" />
+      <window_info anchor="bottom" id="Event Log" order="6" sideWeight="0.5161054" side_tool="true" weight="0.24761905" />
+      <window_info anchor="bottom" id="Version Control" order="7" weight="0.32899022" />
       <window_info anchor="bottom" id="Concurrent Activities Diagram" order="8" weight="0.32840723" />
       <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="10" />
@@ -419,7 +438,7 @@
       <window_info anchor="right" id="Database" order="4" show_stripe_button="false" weight="0.2980333" />
       <window_info anchor="right" id="Data View" order="5" weight="0.32980332" />
       <window_info anchor="right" id="SciView" order="6" show_stripe_button="false" sideWeight="0.4989858" weight="0.2980333" />
-      <window_info anchor="right" x="0" y="0" width="295" height="544" id="Documentation" order="7" sideWeight="0.5010142" side_tool="true" weight="0.3023426" />
+      <window_info anchor="right" x="0" y="0" width="295" height="544" id="Documentation" order="7" sideWeight="0.5010142" side_tool="true" weight="0.30161053" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -472,76 +491,20 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/common/com/__init__.py" />
     <entry file="file://$PROJECT_DIR$/example/eg_python.py" />
-    <entry file="file://$PROJECT_DIR$/../study/python/python36/Lib/site-packages/tushare/stock/__init__.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/../study/python/python36/Lib/site-packages/tushare/stock/__init__.py" />
     <entry file="file://$PROJECT_DIR$/quantitative.py" />
-    <entry file="file://$PROJECT_DIR$/../study/python/python36/Lib/site-packages/tushare/util/common.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="9" column="4" lean-forward="true" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/../study/python/python36/Lib/site-packages/tushare/util/common.py" />
     <entry file="file://$PROJECT_DIR$/main_finance.py" />
-    <entry file="file://$PROJECT_DIR$/../study/python/python36/Lib/site-packages/tushare/stock/cons.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="624">
-          <caret line="99" column="30" selection-start-line="99" selection-start-column="30" selection-end-line="99" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../study/python/python36/Lib/site-packages/tushare/stock/fundamental.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-598">
-          <caret line="28" column="4" selection-start-line="28" selection-start-column="4" selection-end-line="28" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/../study/python/python36/Lib/site-packages/tushare/stock/cons.py" />
+    <entry file="file://$PROJECT_DIR$/../study/python/python36/Lib/site-packages/tushare/stock/fundamental.py" />
     <entry file="file://$PROJECT_DIR$/dao.py" />
-    <entry file="file://$PROJECT_DIR$/../study/python/python36/Lib/site-packages/tushare/util/conns.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="158">
-          <caret line="50" selection-start-line="50" selection-end-line="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../study/python/python36/Lib/site-packages/tushare/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="156">
-          <caret line="8" column="22" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/../study/python/python36/Lib/site-packages/tushare/util/conns.py" />
+    <entry file="file://$PROJECT_DIR$/../study/python/python36/Lib/site-packages/tushare/__init__.py" />
     <entry file="file://$PROJECT_DIR$/logger.py" />
-    <entry file="file://$PROJECT_DIR$/../study/python/python36/Lib/site-packages/pytdx/parser/get_security_list.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="130">
-          <caret line="8" column="6" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../study/python/python36/Lib/site-packages/pytdx/hq.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2314">
-          <caret line="35" column="58" lean-forward="true" selection-start-line="35" selection-start-column="58" selection-end-line="35" selection-end-column="58" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../study/python/python36/Lib/site-packages/tushare/stock/trading.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="1195" column="27" lean-forward="true" selection-start-line="1195" selection-start-column="27" selection-end-line="1195" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../study/python/python36/Lib/site-packages/tushare/stock/classifying.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="241">
-          <caret line="269" column="27" lean-forward="true" selection-start-line="269" selection-start-column="27" selection-end-line="269" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/../study/python/python36/Lib/site-packages/pytdx/parser/get_security_list.py" />
+    <entry file="file://$PROJECT_DIR$/../study/python/python36/Lib/site-packages/pytdx/hq.py" />
+    <entry file="file://$PROJECT_DIR$/../study/python/python36/Lib/site-packages/tushare/stock/trading.py" />
+    <entry file="file://$PROJECT_DIR$/../study/python/python36/Lib/site-packages/tushare/stock/classifying.py" />
     <entry file="file://$PROJECT_DIR$/example/abc.ipynb" />
     <entry file="file://$PROJECT_DIR$/finance/__init__.py">
       <provider selected="true" editor-type-id="text-editor" />
@@ -554,16 +517,8 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/example/topyc.py" />
-    <entry file="file://$PROJECT_DIR$/example/build/eg_oracle_to_xls/Analysis-00.toc">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2704">
-          <caret line="7" column="7" lean-forward="true" selection-start-line="7" selection-start-column="7" selection-end-line="7" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/example/build/eg_oracle_to_xls/eg_oracle_to_xls.exe.manifest">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/example/build/eg_oracle_to_xls/Analysis-00.toc" />
+    <entry file="file://$PROJECT_DIR$/example/build/eg_oracle_to_xls/eg_oracle_to_xls.exe.manifest" />
     <entry file="file://$PROJECT_DIR$/control_winnerlist.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-352" />
@@ -577,13 +532,6 @@
     <entry file="file://$PROJECT_DIR$/control_report.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1872" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/example/config.ini">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
-          <caret line="7" column="17" lean-forward="true" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/control_logger.py">
@@ -600,23 +548,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/example/eg_oracle_to_xls.spec">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="10" column="26" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/example/eg_oracle_to_xls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="14" column="26" lean-forward="true" selection-start-line="14" selection-start-column="26" selection-end-line="14" selection-end-column="26" />
-          <folding>
-            <element signature="e#0#19#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/example/eg_oracle_to_xls.spec" />
     <entry file="file://$PROJECT_DIR$/control_classify.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="162">
@@ -637,16 +569,6 @@
     <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/ide/ide-scripting.groovy">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/example/eg_excel.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="381">
-          <caret line="16" column="40" selection-start-line="16" selection-start-column="40" selection-end-line="16" selection-end-column="40" />
-          <folding>
-            <element signature="e#0#19#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/db_mysql_cons.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="133">
@@ -654,12 +576,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/databasemodel/obj_t_chn_index_list.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-225">
+          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/databasemodel/obj_t_chn_stock_forecast.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-450" />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/example/eg_pymysql.py">
-      <provider selected="true" editor-type-id="text-editor" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-900" />
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/example/eg_numpy.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
+        <state relative-caret-position="-350">
           <caret line="4" selection-start-line="4" selection-end-line="4" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
@@ -667,12 +603,49 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/example/eg_excel.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="15" column="29" lean-forward="true" selection-start-line="15" selection-start-column="29" selection-end-line="15" selection-end-column="29" />
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/example/eg_pandas.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+        <state relative-caret-position="325">
+          <caret line="13" column="17" lean-forward="true" selection-start-line="13" selection-start-column="17" selection-end-line="13" selection-end-column="17" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/example/eg_oracle_to_xls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="11" column="53" selection-start-line="11" selection-start-column="53" selection-end-line="11" selection-end-column="53" />
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/example/config.ini">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="4" column="7" selection-start-line="4" selection-start-column="7" selection-end-line="4" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/example/eg_read_xsl_todb.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="400">
+          <caret line="16" column="32" lean-forward="true" selection-start-line="16" selection-start-column="32" selection-end-line="16" selection-end-column="32" />
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
           </folding>
         </state>
       </provider>

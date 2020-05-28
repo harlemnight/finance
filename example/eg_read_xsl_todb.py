@@ -16,11 +16,15 @@ def main(filepath):
     password = db_dict['pwd']
     connect = db_dict['connect']
     tablename = cf.get(section='sql', option='table_name')
-    try:
-        dbcon = orac.connect(user, password, connect)
-        #do somthing
-    except Exception as e:
-        dbcon.rollback()
-    finally:
-        dbcon.close()
+    file_name = cf.get(section='file', option='file_name')
+    df = pd.read_excel(file_name)
+    data = df.head()  # 默认读取前5行的数据
+    print("获取到所有的值:\n{0}".format(data))  # 格式化输出
+    # try:
+    #     dbcon = orac.connect(user, password, connect)
+    #     #do somthing
+    # except Exception as e:
+    #     dbcon.rollback()
+    # finally:
+    #     dbcon.close()
 

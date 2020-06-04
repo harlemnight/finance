@@ -5,7 +5,6 @@ import os
 import xlrd
 #py2.7.14old server may be utf-8' codec can't decode byte 0x8b in position 2:
 #localmachine is no problem
-os.environ['NLS_LANG'] = 'SIMPLIFIED CHINESE_CHINA.UTF8'
 
 
 def main(filepath):
@@ -25,14 +24,18 @@ def main(filepath):
     try:
         dbcon = orac.connect(user, password, connect)
         rs = dbcon.cursor()
-        sql = 'insert into '.table_name;
+        sql = "insert into t_imp_qsswxx values( '%s', '%s', '%s', '%s','%s', '%s', '%s', '%s')"
+        print(len(df))
         for i in range(len(df)):
-            rs.execute(sql % (df.ix[i, 0], df.ix[i, 1], df.ix[i, 2], df.ix[i, 3]))
-        if i % 10000 == 0:
+            print(i)
+            print(df.loc[i][0])
+            # rs.execute(sql % (df.loc[i, 0], df.loc[i, 1], df.loc[i, 2], df.loc[i, 3],
+            #                   df.loc[i, 4], df.loc[i, 5], df.loc[i, 6], df.loc[i, 7]))
+            #if i % commit_row == 0:
             dbcon.commit()
-
     except Exception as e:
         dbcon.rollback()
+        print(e)
     finally:
         dbcon.commit()
         rs.close()

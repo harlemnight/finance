@@ -5,7 +5,13 @@ import os
 import xlrd
 #py2.7.14old server may be utf-8' codec can't decode byte 0x8b in position 2:
 #localmachine is no problem
-
+#https://blog.csdn.net/wsp_1138886114/article/details/88721075
+#https://www.jb51.net/article/128548.htm
+#https://www.cnblogs.com/kerrycode/p/11665926.html
+#https://www.cnblogs.com/hzhida/archive/2012/08/13/2636735.html
+#https://www.cnblogs.com/isme-zjh/p/11579432.html
+#https://www.cnblogs.com/chenhuabin/p/12689163.html
+os.environ['NLS_LANG'] = 'SIMPLIFIED CHINESE_CHINA.UTF8'
 
 def main(filepath):
     cf = configparser.ConfigParser()
@@ -16,30 +22,43 @@ def main(filepath):
     password = db_dict['pwd']
     connect = db_dict['connect']
     commit_row = db_dict['commit_row']
-    tablename = cf.get(section='sql', option='table_name')
+    db_type = db_dict['db_type']
+    table_name = cf.get(section='sql', option='table_name')
+    table_cols = cf.get(section='sql', option='table_cols')
     file_name = cf.get(section='file', option='file_name')
     #content = xlrd.open_workbook(filename=file_name, encoding_override='gbk')
     df = pd.read_excel(file_name)
-    #data = df.head()  # 默认读取前5行的数据
-    try:
-        dbcon = orac.connect(user, password, connect)
-        rs = dbcon.cursor()
-        sql = "insert into t_imp_qsswxx values( '%s', '%s', '%s', '%s','%s', '%s', '%s', '%s')"
-        print(len(df))
-        for i in range(len(df)):
-            print(i)
-            print(df.loc[i][0])
-            # rs.execute(sql % (df.loc[i, 0], df.loc[i, 1], df.loc[i, 2], df.loc[i, 3],
-            #                   df.loc[i, 4], df.loc[i, 5], df.loc[i, 6], df.loc[i, 7]))
-            #if i % commit_row == 0:
-            dbcon.commit()
-    except Exception as e:
-        dbcon.rollback()
-        print(e)
-    finally:
-        dbcon.commit()
-        rs.close()
-        dbcon.close()
+    param_list = []
+    sql = 'insert into ' + table_name + ' values( ' + ",".join(':'+str(i+1) for i in range(int(table_cols))) + ')'
+    #insert into sj_ztsj.t_imp_qsswxx values( :1,:2,:3,:4,:5,:6,:7,:8)
+    if db_type == 'oracle':
+        try:
+            db_con = orac.connect(user, password, connect)
+            rs = db_con.cursor()
+            for i in range(len(df)):
+                print(i % int(commit_row))
+                if i % int(commit_row) != 0:
+                    param_list.append(df.loc[i])
+                    print('a')
+                else:
+                    rs.executemany(sql, param_list)
+                    db_con.commit()
+                    print('b')
+                    param_list = []
+            rs.executemany(sql, param_list)
+            db_con.commit()
+        except Exception as e:
+            db_con.rollback()
+            print(e)
+        finally:
+            db_con.commit()
+            rs.close()
+            db_con.close()
+    elif db_type == 'mysql':
+        print(1)
+    else:
+        print(2)
+    exit(0)
 
 
 main('config.ini')

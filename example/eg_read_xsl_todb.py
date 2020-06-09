@@ -37,7 +37,7 @@ def main(filepath):
             rs = db_con.cursor()
             for i in range(len(df)):
                 print(i % int(commit_row))
-                if i % int(commit_row) != 0:
+                if i+1 % int(commit_row) != 0:
                     param_list.append(df.loc[i])
                     print('a')
                 else:

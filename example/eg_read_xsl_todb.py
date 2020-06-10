@@ -2,6 +2,7 @@ import configparser
 import cx_Oracle as orac
 import pandas as pd
 import os
+import numpy as np
 import xlrd
 #py2.7.14old server may be utf-8' codec can't decode byte 0x8b in position 2:
 #localmachine is no problem
@@ -29,8 +30,10 @@ def main(filepath):
     #content = xlrd.open_workbook(filename=file_name, encoding_override='gbk')
     print('reading ' + file_name)
     df = pd.read_excel(file_name, dtype=str, keep_default_na=False)
+    #, keep_default_na=False
     #如果一个excel同列有数字和字符串，处理时有问题需，为方便统一转换为str
     print('end ' + file_name)
+    df.fillna('', inplace=True)  #当前panda的版本好像无效
     param_list = []
     sql = 'insert into ' + table_name + ' values( ' + ",".join(':'+str(i+1) for i in range(int(table_cols))) + ')'
     #insert into sj_ztsj.t_imp_qsswxx values( :1,:2,:3,:4,:5,:6,:7,:8)
@@ -42,17 +45,19 @@ def main(filepath):
             for i in range(len(df)):
                 # par = []
                 # for j in range(len(df.loc[i])):
-                #     print(type(df.loc[i][j]))
+                #     if str(df.loc[i][j]) == 'nan':
+                #         df.loc[i][j] = ''
                 #     par.append(df.loc[i][j])
-                #param_list.append(par)
+                # param_list.append(par)
                 param_list.append(df.loc[i])
                 if (i+1) % int(commit_row) == 0:
                     rs.executemany(sql, param_list)
                     db_con.commit()
                     param_list = []
+                    print('commit '+commit_row+' rows')
             rs.executemany(sql, param_list)
             db_con.commit()
-            print('commit ' + commit_row + ' rows')
+            print('commit last rows')
         except Exception as e:
             db_con.rollback()
             print(e)
@@ -65,7 +70,6 @@ def main(filepath):
     else:
         print(2)
     print('app end')
-    exit(0)
 
 
 main('config.ini')

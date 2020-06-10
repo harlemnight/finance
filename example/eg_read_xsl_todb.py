@@ -36,15 +36,12 @@ def main(filepath):
             db_con = orac.connect(user, password, connect)
             rs = db_con.cursor()
             for i in range(len(df)):
-                print(i % int(commit_row))
-                if i+1 % int(commit_row) != 0:
-                    param_list.append(df.loc[i])
-                    print('a')
-                else:
+                param_list.append(df.loc[i])
+                if (i+1) % int(commit_row) == 0:
                     rs.executemany(sql, param_list)
                     db_con.commit()
-                    print('b')
                     param_list = []
+                    print('1111')
             rs.executemany(sql, param_list)
             db_con.commit()
         except Exception as e:

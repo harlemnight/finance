@@ -27,10 +27,13 @@ def main(filepath):
     table_cols = cf.get(section='sql', option='table_cols')
     file_name = cf.get(section='file', option='file_name')
     #content = xlrd.open_workbook(filename=file_name, encoding_override='gbk')
+    print('reading ' + file_name)
     df = pd.read_excel(file_name)
+    print('end ' + file_name)
     param_list = []
     sql = 'insert into ' + table_name + ' values( ' + ",".join(':'+str(i+1) for i in range(int(table_cols))) + ')'
     #insert into sj_ztsj.t_imp_qsswxx values( :1,:2,:3,:4,:5,:6,:7,:8)
+    print(sql)
     if db_type == 'oracle':
         try:
             db_con = orac.connect(user, password, connect)
@@ -41,7 +44,6 @@ def main(filepath):
                     rs.executemany(sql, param_list)
                     db_con.commit()
                     param_list = []
-                    print('1111')
             rs.executemany(sql, param_list)
             db_con.commit()
         except Exception as e:

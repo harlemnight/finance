@@ -28,7 +28,8 @@ def main(filepath):
     file_name = cf.get(section='file', option='file_name')
     #content = xlrd.open_workbook(filename=file_name, encoding_override='gbk')
     print('reading ' + file_name)
-    df = pd.read_excel(file_name)
+    df = pd.read_excel(file_name, dtype=str, keep_default_na=False)
+    #如果一个excel同列有数字和字符串，处理时有问题需，为方便统一转换为str
     print('end ' + file_name)
     param_list = []
     sql = 'insert into ' + table_name + ' values( ' + ",".join(':'+str(i+1) for i in range(int(table_cols))) + ')'
@@ -39,6 +40,11 @@ def main(filepath):
             db_con = orac.connect(user, password, connect)
             rs = db_con.cursor()
             for i in range(len(df)):
+                # par = []
+                # for j in range(len(df.loc[i])):
+                #     print(type(df.loc[i][j]))
+                #     par.append(df.loc[i][j])
+                #param_list.append(par)
                 param_list.append(df.loc[i])
                 if (i+1) % int(commit_row) == 0:
                     rs.executemany(sql, param_list)
@@ -46,6 +52,7 @@ def main(filepath):
                     param_list = []
             rs.executemany(sql, param_list)
             db_con.commit()
+            print('commit ' + commit_row + ' rows')
         except Exception as e:
             db_con.rollback()
             print(e)
@@ -57,6 +64,7 @@ def main(filepath):
         print(1)
     else:
         print(2)
+    print('app end')
     exit(0)
 
 

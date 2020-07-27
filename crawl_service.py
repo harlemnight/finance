@@ -202,3 +202,14 @@ def get_stock_winner(datetime):
     except:
         return None
 
+
+def main():
+    print('bac')
+
+if __name__ == '__main__':
+    #maoyan_example()
+    print(get_all_index_list())
+    # start = '2019-06-24'
+    # end = '2019-07-12'
+    # code = '600460'
+    # print(get_stock_by_code(code, start, end))

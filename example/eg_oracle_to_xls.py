@@ -30,6 +30,7 @@ def main(filepath):
     exesql = cf.get(section='sql',option='exesql')
     rest = exportoExcel(user,pwd,orcl,exesql)
     rest.to_excel(writer, 'sheet1')
+    #yes
     writer.save()
 
 main('config.ini')
